@@ -1,0 +1,145 @@
+.main-menu .menu-item, .main-menu .menu-item a, .mobile_menu_header {
+ font-family: Lato;
+ font-size: 15px;
+ line-height: 15px;
+ color: #000;
+}
+.widget-title, .widget-title a, .tribe-events-list-event-title, #tribe-geo-results .tribe-events-list-event-title, #tribe-geo-options .tribe-events-list-event-title, .tribe-events-single-section-title, .tribe-events-map-event-title {
+	font-family: Lato;
+	font-size: 26px;
+	line-height: 30px;
+	color: #373737;
+}
+#tribe-events-content .tribe-events-single-section-title {
+	font-family: Lato;
+	font-size: 26px;
+	line-height: 30px;
+	color: #373737;
+}
+.comment-reply-title {
+	font-family: Lato;
+	font-size: 26px;
+	line-height: 30px;
+	color: #373737;
+}
+.cws-widget ul>li>a {
+	color: #373737
+}
+.cws-widget .post-list .time-post {
+	color: #373737
+}
+a:hover {
+	color: #373737
+}
+.news .cats {
+	color: #373737
+}
+.news h3>a {
+	color: #373737
+}
+.comments-part .comment_author {
+	color: #373737
+}
+.tribe-events-list-event-title {
+	font-family: Lato;
+	font-size: 26px;
+	line-height: 30px;
+	color: #373737;
+}
+.tribe-events-list-event-title a {
+	color: #373737;
+	line-height: 30px;
+}
+.accordion_title, .tab, .tab_widget.type-vertical .tab.active, .callout_widget .text_part, .milestone_content, .services .col_title, .pricing_table_column:hover .content_part, .pricing_table_column.active_table_column .content_part, #title-404, #text-404 .sel, .archive_item a, #lang_sel li>a, #lang_sel_click ul ul a, #lang_sel_click ul ul a:visited, #lang_sel_list .lang_sel_sel:hover, .services .details a:hover, .toggle_widget.type-2 .accordion_section.active a:hover, .tab_widget.type-vertical .tabs .tab.active {
+	color: #373737
+}
+#tribe-mini-calendar-month, h2.tribe-events-page-title a:hover, h2.tribe-events-page-title a:focus {
+	color: #373737
+}
+div.woocommerce form p.form-row label:not(.checkbox), .woocommerce-tabs form p label, ul.woocommerce-error li, .woocommerce-tabs .tabs li a, #comments .comment_container, .woocommerce .order .order-total, #searchform label.screen-reader-text, .widget_shopping_cart_content p, .woocommerce .woocommerce-tabs .shop_attributes th, .woocommerce #content h1.page-title {
+	color: #373737
+}
+body {
+	font-family: Lato;
+	font-size: 14px;
+	line-height: 21px;
+	word-spacing: 0px;
+	letter-spacing: 0px;
+	color: #7c7c7c;
+}
+.wpcf7-response-output, .wpcf7-form-control-wrap {
+	line-height: 21px
+}
+.tribe-events-event-cost {
+	color: #7c7c7c
+}
+.cws_language_bar #lang_sel a>*, div.woocommerce td.actions input[type="text"] {
+	font-size: 14px
+}
+ul.product_list_widget li>*, .woocommerce .toggle_sidebar .switcher {
+	line-height: 21px
+}
+ .tp-caption a {
+color:#ff7302;
+text-shadow:none;
+-webkit-transition:all 0.2s ease-out;
+-moz-transition:all 0.2s ease-out;
+-o-transition:all 0.2s ease-out;
+-ms-transition:all 0.2s ease-out
+}
+.tp-caption a:hover {
+	color: #ffa902
+}
+.tp-caption.clinico {
+	width: 27.857em;
+	background: rgba(255,255,255,0.5) !important;
+	padding: 2.143em 0;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff !important
+}
+.tp-caption.clinico i {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 3.2em;
+	text-shadow: none
+}
+.tp-caption.clinico h1 {
+	font-size: 3.8em;
+	line-height: 0.96em;
+	font-weight: 700;
+	margin-bottom: 0
+}
+.tp-caption.clinico h1 span {
+	display: block;
+	font-size: 0.685em !important;
+	line-height: 0.95em !important;
+	font-weight: 400
+}
+.tp-caption.clinico>*+* {
+	margin-top: 9px
+}
+.tp-caption.clinico>i+* {
+	margin-top: 0
+}
+.tp-caption.clinico a {
+	color: #fff
+}
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+.doctor{ margin-top:20px; }
+.docFirst{ margin-left:0 !important; }
+
+.row {
+    margin-bottom: 20px;
+	width:100%; 
+	float:left;
+}
+.row::after {
+    clear: both;
+}
+.redStar{ color:#F00; }
+.red_word{ width:auto; clear:both; padding:5px; color:#B80B46; float:left; margin-bottom:20px; }
