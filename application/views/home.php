@@ -106,7 +106,7 @@ if(!empty($rsNew)):?>
 
                 <div id="grid-container" class="cbp-l-grid-projects">
                     <ul>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMI 0,8";
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
                         foreach($rsAllVideos AS $k):?>
@@ -129,7 +129,7 @@ if(!empty($rsNew)):?>
                             <!--<div class="cbp-l-grid-projects-desc">Web Design / Graphic11</div>-->
                         </li>
                         <?php endforeach;?>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `photo_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `photo_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
                         foreach($rsAllVideos AS $k):?>
@@ -173,7 +173,7 @@ if(!empty($rsNew)):?>
                 </div>
 
                 <div class="cbp-l-loadMore-button">
-                    <a href="ajax/loadMore.html" class="cbp-l-loadMore-button-link">LOAD MORE</a>
+                    <a href="<?php echo BASE_URL;?>" class="cbp-l-loadMore-button-link">LOAD MORE PHOTO</a>
                 </div>
 
             </div>

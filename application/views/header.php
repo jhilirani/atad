@@ -48,29 +48,30 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="<?php echo BASE_URL;?>">Home</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About ATAD<i class="fa fa-angle-down"></i></a>
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About ATAD &nbsp; <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="blog-rightsidebar.html">Our Vision</a></li>
-                                    <li><a href="blog-leftsidebar.html">Our Team</a></li>
-                                    <li><a href="blog-leftsidebar.html">Our Activity</a></li>
+                                    <li><a href="our-vision">Our Vision</a></li>
+                                    <li><a href="about-us">About ATAD</a></li>
+                                    <li><a href="team">Our Team</a></li>
+                                    <li><a href="our-activity">Our Activity</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Media<i class="fa fa-angle-down"></i></a>
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Media &nbsp; <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="index.html">Photo Gallery</a></li>
-                                    <li><a href="index2.html">Video Gallery</a></li>
+                                    <li><a href="photo">Photo Gallery</a></li>
+                                    <li><a href="video">Video Gallery</a></li>
                                 </ul>				
 
                             </li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Information<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Information &nbsp; <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="post-rightsidebar.html">Privacy Policy</a></li>
-                                    <li><a href="post-leftsidebar.html">Terms & Condition</a></li>
-                                    <li><a href="post-leftsidebar.html">Press release</a></li>
+                                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                                    <li><a href="terms-condition">Terms & Condition</a></li>
+                                    <li><a href="press-release">Press release</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact-us">Contact</a></li>
                         </ul>
                     </div>
                 </div>

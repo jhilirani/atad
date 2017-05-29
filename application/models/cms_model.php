@@ -41,12 +41,14 @@ class Cms_model extends CI_Model {
 	
 	public function get_content($string){
 		$funIdArr=array(
-		'job_oriented_training'=>2,
+		'about_atad'=>1,
+		'our_vision'=>2,
 		'demo_schedules'=>3,
-		'skills'=>4,
-		'terms_conditions'=>5,
-		'privacy_policy'=>6,
-                'about_us'=>11    
+		'our_activity'=>4,
+		'terms_and_conditions'=>5,
+		'career_center'=>7,
+		'privacy_policy'=>6,    
+		'press_release'=>8    
 		);
 		return $this->get_content_by_id($funIdArr[$string]);
 	}

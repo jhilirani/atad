@@ -20,11 +20,11 @@
 				<div class="widget">
 					<h4>Pages</h4>
 					<ul class="link-list">
-						<li><a href="#">Press release</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Career center</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="press-release">Press release</a></li>
+						<li><a href="terms-condition">Terms and conditions</a></li>
+						<li><a href="privacy-policy">Privacy policy</a></li>
+						<li><a href="career-center">Career center</a></li>
+						<li><a href="contact-us">Contact us</a></li>
 					</ul>
 				</div>
 				
@@ -33,11 +33,11 @@
 				<div class="widget">
 					<h4>Information</h4>
 					<ul class="link-list">
-						<li><a href="#">About ATAD</a></li>
-						<li><a href="#">Our Team</a></li>
-						<li><a href="#">Our Our Vision</a></li>
-						<li><a href="#">Our Demo Schedules</a></li>
-						<li><a href="#">Our Activity</a></li>
+						<li><a href="about-us">About ATAD</a></li>
+						<li><a href="team">Our Team</a></li>
+						<li><a href="our-vision">Our Our Vision</a></li>
+						<li><a href="demo-schedules">Our Demo Schedules</a></li>
+						<li><a href="our-activity">Our Activity</a></li>
 					</ul>
 				</div>
 			</div>

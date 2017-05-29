@@ -40,17 +40,16 @@
 
 $route['default_controller'] = "index";
 //$route['admin']="admin/index";
-$route['about-us']="index/about_us";
+$route['about-us']="cms/about_atad";
 $route['testimonial']="index/testimonial";
-$route['online-training']="index/online_training";
-$route['privacy-policy']="index/privacy_policy";
-$route['terms-conditions']="index/terms_conditions";
-$route['job-oriented-training']="index/job_oriented_training";
-$route['demo-schedules']="index/demo_schedules";
-$route['skills']="index/skills";
+$route['our-vision']="cms/our_vision";
+$route['privacy-policy']="cms/privacy_policy";
+$route['terms-condition']="cms/terms_and_conditions";
+$route['demo-schedules']="cms/demo_schedules";
+$route['our-activity']="cms/our_activity";
+$route['career-center']="cms/career_center";
 $route['contact-us']="index/contact_us";
-$route['free-demo']="index/free_demo";
-$route['pay-online']="index/pay_online";
+$route['press-release']="cms/press_release";
 //$route['demo_schedules']="index/demo_schedules";
 //$route['demo_schedules']="index/demo_schedules";
 $route['404_override'] = '';
