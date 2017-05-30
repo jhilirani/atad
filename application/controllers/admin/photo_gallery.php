@@ -4,7 +4,7 @@ class Photo_gallery extends MY_Controller{
 	public function __construct(){
             parent::__construct();
             $this->load->model('Photo_gallery_model');
-            $this->_resize_file_array=array('200X200','150X150','100X100','75X75');
+            $this->_resize_file_array=array('250X350','150X150','100X100','75X75');
             $this->load->model("Category_model");
 	}
 	

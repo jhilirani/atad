@@ -1,4 +1,4 @@
-<?php echo $html_heading; ?><?php echo $header; ?><?php echo $HomePageSlider; ?>
+<?php  echo $html_heading; ?><?php echo $header; ?><?php echo $HomePageSlider; ?>
 <link href="<?php echo $SiteCSSURL?>jquery.simpleTicker.css" rel="stylesheet" />
 <?php $rsNew=$this->db->from('news')->where(array('Status'=>'1'))->get()->result();
 if(!empty($rsNew)):?>
@@ -15,7 +15,7 @@ if(!empty($rsNew)):?>
         </div>
     </div>
 </section>
-<?php endif;?>
+<?php endif; ?>
 <section id="content">
     <!-- divider -->
     <div class="container">
@@ -90,23 +90,21 @@ if(!empty($rsNew)):?>
         </div>
     </div>
     <!-- end divider -->
-
     <!-- Portfolio Projects -->
     <div class="container marginbot50">
         <div class="row">
             <div class="col-lg-12">
                 <h4 class="heading">Our Activity in Visual</h4>
-
                 <div id="filters-container" class="cbp-l-filters-button">
                     <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All<div class="cbp-filter-counter"></div></div>
-                    <div data-filter=".identity" class="cbp-filter-item">Photo<div class="cbp-filter-counter"></div></div>
-                    <div data-filter=".web-design" class="cbp-filter-item">Video<div class="cbp-filter-counter"></div></div>
+                    <div data-filter=".identity" class="cbp-filter-item" data-type="photo">Photo<div class="cbp-filter-counter"></div></div>
+                    <div data-filter=".web-design" class="cbp-filter-item" data-type="video">Video<div class="cbp-filter-counter"></div></div>
                 </div>
                 <!-- // all web design are videos and all identity are photos-->
-
                 <div id="grid-container" class="cbp-l-grid-projects">
                     <ul>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMI 0,8";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
+                        //echo $sql;
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
                         foreach($rsAllVideos AS $k):?>
@@ -136,12 +134,12 @@ if(!empty($rsNew)):?>
                         <li class="cbp-item identity">
                             <div class="cbp-caption">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo SiteResourcesURL;?>photo_gallery/200X200/<?php echo $k->Image;?>" alt="" />
+                                    <img src="<?php echo SiteResourcesURL;?>photo_gallery/250X350/<?php echo $k->Image;?>" alt="" class="img-responsive" />
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <a href="<?php echo SiteResourcesURL;?>photo_gallery/<?php echo $k->Image;?>" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="WhereTO App<br>by Tiberiu Neamu">view larger</a>
+                                            <a href="<?php echo SiteResourcesURL;?>photo_gallery/<?php echo $k->Image;?>" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="<?php echo $k->CategoryName;?>">view larger</a>
                                         </div>
                                     </div>
                                 </div>
@@ -150,37 +148,14 @@ if(!empty($rsNew)):?>
                             <!--<div class="cbp-l-grid-projects-desc">Web Design / Identity</div>-->
                         </li>
                         <?php endforeach;?>
-                        <li class="cbp-item identity">
-                            <div class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="img/works/6.jpg" alt="" />
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-
-                                            <a href="img/works/6big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Ski * Buddy<br>by Tiberiu Neamu">view larger</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-l-grid-projects-title">Ski * Buddy</div>
-                            <div class="cbp-l-grid-projects-desc">Identity / Web Design</div>
-                        </li>
-                        
-                        
                     </ul>
                 </div>
-
                 <div class="cbp-l-loadMore-button">
-                    <a href="<?php echo BASE_URL;?>" class="cbp-l-loadMore-button-link">LOAD MORE PHOTO</a>
+                    <a href="<?php echo BASE_URL;?>video" class="cbp-l-loadMore-button-link">LOAD MORE VIDEOS</a>
                 </div>
-
             </div>
         </div>
     </div>
-
-
     <!-- divider -->
     <div class="container">
         <div class="row">
@@ -193,7 +168,7 @@ if(!empty($rsNew)):?>
     <!-- end divider -->
 
     <!-- clients -->
-    <div class="container">
+    <!--<div class="container">
         <div class="row">
             <div class="col-xs-6 col-md-2 aligncenter client">
                 <img alt="logo" src="img/clients/logo1.png" class="img-responsive" />
@@ -219,7 +194,7 @@ if(!empty($rsNew)):?>
             </div>	
 
         </div>
-    </div>
+    </div> --->
     
     <!-- parallax  -->
     <div id="parallax1" class="parallax text-light text-center marginbot50" data-stellar-background-ratio="0.5">	
@@ -250,5 +225,12 @@ $(function(){
   //$.simpleTicker($("#ticker-one-item"),{'effectType':'fade'});
     $("#ticker-slide").css("height","45px");
     $("#ticker-slide").css("border-radius","45px");
+    $('.cbp-filter-item').click(function(){
+        if($(this).data("type")=="photo"){
+            $('.cbp-l-loadMore-button').html('<a href="<?php echo BASE_URL;?>photo" class="cbp-l-loadMore-button-link">LOAD MORE PHOTO</a>');
+        }else{
+            $('.cbp-l-loadMore-button').html('<a href="<?php echo BASE_URL;?>video" class="cbp-l-loadMore-button-link">LOAD MORE Video</a>');
+        }
+    });
 });
 </script>

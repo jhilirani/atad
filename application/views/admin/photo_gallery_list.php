@@ -96,7 +96,6 @@ function AskDelete(id)
     <td><?php echo $val+1;?></td>
     <td><img src="<?php echo $SiteResourcesURL.'photo_gallery/75X75/'.$InerArr->Image;?>" alt="" /></td>
     <td><?php echo ($InerArr->Status=='1')?'Active':'Inactive';?></td>
-    <td><?php echo ($InerArr->Status=='1')?'Active':'Inactive';?></td>
     <td>
 	<?php if($InerArr->Status=='1'){$action=0;}else{$action=1;}?>
 	<a href="<?php echo base_url().'admin/photo_gallery/change_status/'.$InerArr->PhotoGalleryID.'/'.$action;?>" class="AdminDashBoardLinkText"><?php if($InerArr->Status=='1'){?><img src="<?php echo $SiteImagesURL.'admin/';?>active1.png" alt="Inactive" title="Active" /><?php }else{?><img src="<?php echo $SiteImagesURL.'admin/';?>inactive1.png" alt="Inactive" title="Inactive" /><?php }?></a>

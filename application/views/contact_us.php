@@ -12,24 +12,46 @@
           <div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>
                 <form action="" method="post" role="form" class="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validation"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validation"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="tel" class="form-control" name="Phone" id="Phone" placeholder="Your phone number" data-rule="minlen:10" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
                     </div>
-                    
-                    <div class="text-center"><button type="submit" class="btn btn-theme btn-block btn-md">Send Message</button></div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <canvas id="secret_img" width="130" height="25" style="border:1px solid #d3d3d3;padding-top: 8px; padding-left: 15px;"> <?php echo 'Browser Not Support HTML5';?>.</canvas><br />Not getting it ?<a href="javascript:void(0);" onclick="GeneratNewImage();">Click here</a>  to get a new.
+                            <input type="text" class="form-control" name="secret" id="secret" data-rule="required" data-msg="Please enter the code"/>
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">&nbsp;</div>
+                    <div class="col-md-4">&nbsp;</div>
+                    <div class="col-md-3"><div class="text-center"><button type="submit" class="btn btn-theme btn-block btn-md">Send Message</button></div></div>
                 </form>
                 <hr class="colorgraph">
 
@@ -38,7 +60,7 @@
   </div>
   </section>
 <?php echo $footer;?>
-<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyCLnr7TcsTEGSwSGvsblqWc1XDdSkIC9lg"></script>
 <script>
 jQuery(document).ready(function( $ ) {
     

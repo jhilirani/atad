@@ -4,7 +4,7 @@ class Team extends MY_Controller{
 	public function __construct(){
             parent::__construct();
             $this->load->model('Team_model');
-            $this->_resize_file_array=array('150X150','100X100','75X75');
+            $this->_resize_file_array=array('400X400','100X100','75X75');
 	}
 	
 	public function index(){

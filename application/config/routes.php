@@ -49,9 +49,12 @@ $route['demo-schedules']="cms/demo_schedules";
 $route['our-activity']="cms/our_activity";
 $route['career-center']="cms/career_center";
 $route['contact-us']="index/contact_us";
+$route['contact-save']="index/contact_us_submit";
 $route['press-release']="cms/press_release";
-//$route['demo_schedules']="index/demo_schedules";
-//$route['demo_schedules']="index/demo_schedules";
+$route['photo']="index/photo";
+$route['video']="index/video";
+$route['team']="index/team";
+
 $route['404_override'] = '';
 
 
