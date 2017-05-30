@@ -26,10 +26,10 @@ class Index extends MY_Controller{
     public function index(){
         $SEODataArr=array();
         $data=$this->_get_tobe_login_template($SEODataArr);
-        //$this->db->insert('site_views',array('IP'=>$this->input->ip_address()));
-        //$lastViewId=$this->db->insert_id();
+        $this->db->insert('site_views',array('IP'=>$this->input->ip_address()));
+        $lastViewId=$this->db->insert_id();
         //echo $lastViewId;die;
-        //$data['LastViewNo']=$lastViewId;
+        $data['LastViewNo']=$lastViewId;
         $sliderData=$this->Banner_model->get_for_fe();
         $data['BannerImageData']=$sliderData;
         $data['HomePageSlider']=$this->load->view('home_page_slider',$data,TRUE);
@@ -83,14 +83,12 @@ class Index extends MY_Controller{
         }
 
         if($error==FALSE){
-            $dataArr=array('Name'=>$Name,'Email'=>$Email,'Phone'=>$Phone,'Message'=>$Message,'ContactedDate'=>date('Y-m-d H:i:s'));
+            $dataArr=array('Name'=>$Name,'Email'=>$Email,'Phone'=>$Phone,'Message'=>$Message,'addedDate'=>date('Y-m-d H:i:s'),'IP'=>  $this->input->ip_address());
 
             $this->User_model->post_contact($dataArr);
-            $this->session->set_flashdata('Message',"Thanks you for contacting us,Our staff will get back to you shortly.");
-            redirect(base_url());
+            die("OK");
         }else{
-            $this->session->set_flashdata('Message',$error_message);
-            redirect(base_url().'index/contact_us');
+            die('<i class="fa fa-exclamation-triangle fa-2x"></i> '.$error_message);
         }
     }
      

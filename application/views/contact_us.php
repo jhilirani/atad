@@ -9,8 +9,8 @@
       <div class="col-md-8 col-md-offset-2">
           <h2>Contact us <small>get in touch with us by filling form below</small></h2>
           <hr class="colorgraph">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
+          <div id="sendmessage"><i class="fa fa-check-square-o fa-2x"></i>Your message has been sent. Thank you!</div>
+                <div id="errormessage"><i class="fa fa-exclamation-triangle fa-2x"></i></div>
                 <form action="" method="post" role="form" class="contactForm">
                     <div class="col-md-6">
                         <div class="form-group">

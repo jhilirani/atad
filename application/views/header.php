@@ -14,12 +14,21 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-4"><img src="<?php echo SiteResourcesURL?>img/avatar.png" alt="" width="70" height="70"></div>
-                            <div class="col-md-4"><img src="<?php echo SiteResourcesURL?>img/avatar.png" alt="" width="70" height="70"></div>
-                            <div class="col-md-4"><img src="<?php echo SiteResourcesURL?>img/avatar.png" alt="" width="70" height="70"></div>
-                        </div>
                         <div class="col-md-5">
+                            <div class="col-md-4 text-center">
+                                <img src="<?php echo SiteResourcesURL?>images/soumya.jpg" alt="" width="60" height="70">
+                                <div style="font-size: 11px;color:#000;font-weight: bold;">Secretary ATAD</div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <img src="<?php echo SiteResourcesURL?>images/judhisthira.png" alt="" width="65" height="70">
+                                <div style="font-size: 11px;color:#000;font-weight: bold;">CTO & Advisory ATAD</div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <img src="<?php echo SiteResourcesURL?>img/avatar.png" alt="" width="70" height="70">
+                                <div style="font-size: 11px;color:#000;font-weight: bold;">President ATAD</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div id="sb-search" class="sb-search">
                                 <form>
                                     <input class="sb-search-input" placeholder="Enter your i-card number" type="text" value="" name="search" id="search">
@@ -42,7 +51,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html"><img src="<?php echo SiteResourcesURL;?>img/logo.png" alt="" width="90" height="90" /></a>
+                        <a class="navbar-brand" href="<?php echo BASE_URL;?>"><img src="<?php echo SiteResourcesURL;?>img/logo.png" alt="" width="90" height="90" /></a>
                     </div>
                     <div class="navbar-collapse collapse ">
                         <ul class="nav navbar-nav">

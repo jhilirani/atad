@@ -1,7 +1,7 @@
 <?php
 class User_model extends CI_Model {
 	public $_table='user';
-	public $_contact='contacts';
+	private $_contact='contacts';
 	public $result=NULL;
 	function __construct() {
 		parent::__construct();
