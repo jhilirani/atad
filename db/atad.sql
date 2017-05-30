@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2017 at 10:01 PM
+-- Generation Time: May 30, 2017 at 04:18 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `atad`
 --
-CREATE DATABASE IF NOT EXISTS `atad` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `atad`;
 
 -- --------------------------------------------------------
 
@@ -28,16 +26,14 @@ USE `atad`;
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `AdminID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `admin` (
+  `AdminID` int(11) NOT NULL,
   `UserName` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `FullName` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `Email` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `Password` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `Status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`AdminID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -52,14 +48,12 @@ INSERT INTO `admin` (`AdminID`, `UserName`, `FullName`, `Email`, `Password`, `St
 -- Table structure for table `banner`
 --
 
-DROP TABLE IF EXISTS `banner`;
-CREATE TABLE IF NOT EXISTS `banner` (
-  `BannerID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `banner` (
+  `BannerID` int(11) NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Status` tinyint(1) NOT NULL DEFAULT '1',
-  `Caption` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`BannerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `Caption` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `banner`
@@ -74,15 +68,13 @@ INSERT INTO `banner` (`BannerID`, `Image`, `Status`, `Caption`) VALUES
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE IF NOT EXISTS `category` (
-  `CategoryID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `category` (
+  `CategoryID` int(11) NOT NULL,
   `ParrentCategoryID` int(11) NOT NULL,
   `CategoryName` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `Image` varchar(50) COLLATE latin1_general_ci DEFAULT NULL,
-  `Status` tinyint(1) DEFAULT '1',
-  PRIMARY KEY (`CategoryID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Status` tinyint(1) DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `category`
@@ -99,18 +91,16 @@ INSERT INTO `category` (`CategoryID`, `ParrentCategoryID`, `CategoryName`, `Imag
 -- Table structure for table `cms`
 --
 
-DROP TABLE IF EXISTS `cms`;
-CREATE TABLE IF NOT EXISTS `cms` (
-  `CMSID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cms` (
+  `CMSID` int(11) NOT NULL,
   `Title` varchar(50) COLLATE latin1_general_ci DEFAULT NULL,
   `MetaTitle` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `MetaKeyWord` text COLLATE latin1_general_ci NOT NULL,
   `MetaDescription` text COLLATE latin1_general_ci NOT NULL,
   `ShortBody` text COLLATE latin1_general_ci NOT NULL,
   `Body` longtext COLLATE latin1_general_ci,
-  `Status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`CMSID`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `cms`
@@ -131,16 +121,14 @@ INSERT INTO `cms` (`CMSID`, `Title`, `MetaTitle`, `MetaKeyWord`, `MetaDescriptio
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
-CREATE TABLE IF NOT EXISTS `contacts` (
-  `ContactUsID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contacts` (
+  `ContactUsID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Phone` varchar(100) NOT NULL,
   `Message` text NOT NULL,
   `addedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ip` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`ContactUsID`)
+  `ip` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -149,13 +137,11 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 -- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `country`;
-CREATE TABLE IF NOT EXISTS `country` (
-  `CountryID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `country` (
+  `CountryID` int(11) NOT NULL,
   `CountryCode` varchar(3) NOT NULL DEFAULT '',
-  `CountryName` varchar(200) NOT NULL DEFAULT '',
-  PRIMARY KEY (`CountryID`)
-) ENGINE=MyISAM AUTO_INCREMENT=240 DEFAULT CHARSET=utf8;
+  `CountryName` varchar(200) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `country`
@@ -408,9 +394,8 @@ INSERT INTO `country` (`CountryID`, `CountryCode`, `CountryName`) VALUES
 -- Table structure for table `course`
 --
 
-DROP TABLE IF EXISTS `course`;
-CREATE TABLE IF NOT EXISTS `course` (
-  `CourseID` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `course` (
+  `CourseID` bigint(20) NOT NULL,
   `Title` varchar(255) NOT NULL,
   `Description` longblob NOT NULL,
   `CategoryID` int(11) NOT NULL,
@@ -419,9 +404,8 @@ CREATE TABLE IF NOT EXISTS `course` (
   `MetaDescription` text NOT NULL,
   `Duration` int(11) NOT NULL COMMENT 'In Month',
   `Charges` float(10,2) NOT NULL,
-  `Status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`CourseID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `Status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course`
@@ -436,14 +420,12 @@ INSERT INTO `course` (`CourseID`, `Title`, `Description`, `CategoryID`, `MetaTit
 -- Table structure for table `news`
 --
 
-DROP TABLE IF EXISTS `news`;
-CREATE TABLE IF NOT EXISTS `news` (
-  `NewsID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `news` (
+  `NewsID` int(11) NOT NULL,
   `News` varchar(2000) NOT NULL,
   `PostedDate` date NOT NULL,
-  `Status` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`NewsID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `Status` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `news`
@@ -459,8 +441,7 @@ INSERT INTO `news` (`NewsID`, `News`, `PostedDate`, `Status`) VALUES
 -- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE IF NOT EXISTS `order` (
+CREATE TABLE `order` (
   `OrderID` bigint(20) NOT NULL,
   `UserID` int(11) NOT NULL,
   `CourseID` int(11) NOT NULL,
@@ -481,22 +462,19 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- Table structure for table `photo_gallery`
 --
 
-DROP TABLE IF EXISTS `photo_gallery`;
-CREATE TABLE IF NOT EXISTS `photo_gallery` (
-  `PhotoGalleryID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `photo_gallery` (
+  `PhotoGalleryID` int(11) NOT NULL,
   `Image` varchar(100) NOT NULL,
   `Status` tinyint(1) NOT NULL DEFAULT '1',
-  `CategoryID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`PhotoGalleryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `CategoryID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `photo_gallery`
 --
 
 INSERT INTO `photo_gallery` (`PhotoGalleryID`, `Image`, `Status`, `CategoryID`) VALUES
-(3, 'acefaa92d7b9cb0818b893038b022f0f.JPG', 1, NULL),
-(4, '0409627d7692d0149775c6c014252e65.JPG', 1, 4);
+(6, '67a04b0a251e7830f9b935805628bbc4.JPG', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -504,13 +482,11 @@ INSERT INTO `photo_gallery` (`PhotoGalleryID`, `Image`, `Status`, `CategoryID`) 
 -- Table structure for table `site_views`
 --
 
-DROP TABLE IF EXISTS `site_views`;
-CREATE TABLE IF NOT EXISTS `site_views` (
-  `SiteViewsID` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `site_views` (
+  `SiteViewsID` bigint(20) NOT NULL,
   `IP` varchar(20) NOT NULL,
-  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`SiteViewsID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `site_views`
@@ -529,7 +505,14 @@ INSERT INTO `site_views` (`SiteViewsID`, `IP`, `Date`) VALUES
 (10, '::1', '2017-05-28 19:54:25'),
 (11, '::1', '2017-05-28 19:55:07'),
 (12, '::1', '2017-05-28 19:55:21'),
-(13, '::1', '2017-05-28 19:57:12');
+(13, '::1', '2017-05-28 19:57:12'),
+(14, '::1', '2017-05-29 16:10:48'),
+(15, '::1', '2017-05-29 16:11:08'),
+(16, '::1', '2017-05-29 16:16:52'),
+(17, '::1', '2017-05-29 16:17:12'),
+(18, '::1', '2017-05-29 16:17:55'),
+(19, '::1', '2017-05-29 16:18:00'),
+(20, '::1', '2017-05-29 16:18:23');
 
 -- --------------------------------------------------------
 
@@ -537,13 +520,11 @@ INSERT INTO `site_views` (`SiteViewsID`, `IP`, `Date`) VALUES
 -- Table structure for table `state`
 --
 
-DROP TABLE IF EXISTS `state`;
-CREATE TABLE IF NOT EXISTS `state` (
-  `StateID` bigint(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `state` (
+  `StateID` bigint(11) NOT NULL,
   `StateName` varchar(255) DEFAULT NULL,
-  `CountryID` int(11) NOT NULL,
-  PRIMARY KEY (`StateID`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
+  `CountryID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `state`
@@ -660,15 +641,12 @@ INSERT INTO `state` (`StateID`, `StateName`, `CountryID`) VALUES
 -- Table structure for table `system_constants`
 --
 
-DROP TABLE IF EXISTS `system_constants`;
-CREATE TABLE IF NOT EXISTS `system_constants` (
-  `ConstantID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `system_constants` (
+  `ConstantID` int(11) NOT NULL,
   `ConstantName` varchar(200) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `ConstantValue` varchar(200) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `Description` varchar(240) COLLATE latin1_general_ci DEFAULT NULL,
-  PRIMARY KEY (`ConstantID`),
-  UNIQUE KEY `ConstantName` (`ConstantName`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Description` varchar(240) COLLATE latin1_general_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `system_constants`
@@ -689,25 +667,23 @@ INSERT INTO `system_constants` (`ConstantID`, `ConstantName`, `ConstantValue`, `
 -- Table structure for table `team`
 --
 
-DROP TABLE IF EXISTS `team`;
-CREATE TABLE IF NOT EXISTS `team` (
-  `TeamID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `team` (
+  `TeamID` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `Desingnation` varchar(100) NOT NULL,
   `Image` varchar(100) NOT NULL,
   `About` varchar(2000) NOT NULL,
   `Status` tinyint(1) NOT NULL DEFAULT '0',
-  `Email` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`TeamID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `Email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `team`
 --
 
 INSERT INTO `team` (`TeamID`, `Name`, `Desingnation`, `Image`, `About`, `Status`, `Email`) VALUES
-(1, 'Soumyabrata Sahoo', 'Secreatary', '6cd783d281efb7c937b4b966ad29762d.JPG', 'test', 1, 'secrata@ataad.com'),
-(2, 'Jduhisthira sahaoo', 'cto', 'f776adc0fd678f6f1c4db8eaef0ac9ac.JPG', 'teat', 1, 't@ataad.com');
+(1, 'Soumyabrata Sahoo', 'Secreatary', '53306494667774227387efee9a8aa12c.JPG', 'test', 1, 'secrata@ataad.com'),
+(2, 'Jduhisthira sahaoo', 'cto', 'c7fa5a79cbe8b3842eb689f4f4f0c4cd.JPG', 'teat', 1, 't@ataad.com');
 
 -- --------------------------------------------------------
 
@@ -715,18 +691,16 @@ INSERT INTO `team` (`TeamID`, `Name`, `Desingnation`, `Image`, `About`, `Status`
 -- Table structure for table `testimonial`
 --
 
-DROP TABLE IF EXISTS `testimonial`;
-CREATE TABLE IF NOT EXISTS `testimonial` (
-  `TestimonialID` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `testimonial` (
+  `TestimonialID` bigint(20) NOT NULL,
   `UserID` bigint(20) DEFAULT NULL,
   `Testimonial` text NOT NULL,
   `PostedDate` date NOT NULL,
   `Status` tinyint(1) NOT NULL DEFAULT '0',
   `Email` varchar(100) DEFAULT NULL,
   `FirstName` varchar(110) NOT NULL,
-  `LastName` varchar(110) NOT NULL,
-  PRIMARY KEY (`TestimonialID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `LastName` varchar(110) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `testimonial`
@@ -742,9 +716,8 @@ INSERT INTO `testimonial` (`TestimonialID`, `UserID`, `Testimonial`, `PostedDate
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `UserID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `UserID` int(11) NOT NULL,
   `Email` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
   `Password` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
   `FName` varchar(255) COLLATE latin1_general_ci NOT NULL,
@@ -761,9 +734,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `FacebookID` bigint(20) DEFAULT NULL COMMENT 'facebook id',
   `TwitterID` bigint(20) DEFAULT NULL,
   `Image` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
-  `Status` tinyint(1) DEFAULT '1' COMMENT 'is_active',
-  PRIMARY KEY (`UserID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `Status` tinyint(1) DEFAULT '1' COMMENT 'is_active'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -779,14 +751,12 @@ INSERT INTO `user` (`UserID`, `Email`, `Password`, `FName`, `LName`, `Address`, 
 -- Table structure for table `video_gallery`
 --
 
-DROP TABLE IF EXISTS `video_gallery`;
-CREATE TABLE IF NOT EXISTS `video_gallery` (
-  `VideoGalleryID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `video_gallery` (
+  `VideoGalleryID` int(11) NOT NULL,
   `Url` varchar(100) NOT NULL,
   `Status` tinyint(1) NOT NULL DEFAULT '1',
-  `CategoryID` int(11) NOT NULL,
-  PRIMARY KEY (`VideoGalleryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `CategoryID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `video_gallery`
@@ -796,6 +766,191 @@ INSERT INTO `video_gallery` (`VideoGalleryID`, `Url`, `Status`, `CategoryID`) VA
 (4, 'https://www.youtube.com/watch?v=XzxoLRIQ8Og', 1, 3),
 (5, 'https://www.youtube.com/watch?v=PGQRNKHJwH4', 1, 4);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`AdminID`);
+
+--
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`BannerID`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`CategoryID`);
+
+--
+-- Indexes for table `cms`
+--
+ALTER TABLE `cms`
+  ADD PRIMARY KEY (`CMSID`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`ContactUsID`);
+
+--
+-- Indexes for table `country`
+--
+ALTER TABLE `country`
+  ADD PRIMARY KEY (`CountryID`);
+
+--
+-- Indexes for table `course`
+--
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`CourseID`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`NewsID`);
+
+--
+-- Indexes for table `photo_gallery`
+--
+ALTER TABLE `photo_gallery`
+  ADD PRIMARY KEY (`PhotoGalleryID`);
+
+--
+-- Indexes for table `site_views`
+--
+ALTER TABLE `site_views`
+  ADD PRIMARY KEY (`SiteViewsID`);
+
+--
+-- Indexes for table `state`
+--
+ALTER TABLE `state`
+  ADD PRIMARY KEY (`StateID`);
+
+--
+-- Indexes for table `system_constants`
+--
+ALTER TABLE `system_constants`
+  ADD PRIMARY KEY (`ConstantID`),
+  ADD UNIQUE KEY `ConstantName` (`ConstantName`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`TeamID`);
+
+--
+-- Indexes for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD PRIMARY KEY (`TestimonialID`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `video_gallery`
+--
+ALTER TABLE `video_gallery`
+  ADD PRIMARY KEY (`VideoGalleryID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `AdminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `BannerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `cms`
+--
+ALTER TABLE `cms`
+  MODIFY `CMSID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `ContactUsID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `country`
+--
+ALTER TABLE `country`
+  MODIFY `CountryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+--
+-- AUTO_INCREMENT for table `course`
+--
+ALTER TABLE `course`
+  MODIFY `CourseID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `NewsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `photo_gallery`
+--
+ALTER TABLE `photo_gallery`
+  MODIFY `PhotoGalleryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `site_views`
+--
+ALTER TABLE `site_views`
+  MODIFY `SiteViewsID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `state`
+--
+ALTER TABLE `state`
+  MODIFY `StateID` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+--
+-- AUTO_INCREMENT for table `system_constants`
+--
+ALTER TABLE `system_constants`
+  MODIFY `ConstantID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `team`
+--
+ALTER TABLE `team`
+  MODIFY `TeamID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  MODIFY `TestimonialID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `video_gallery`
+--
+ALTER TABLE `video_gallery`
+  MODIFY `VideoGalleryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
