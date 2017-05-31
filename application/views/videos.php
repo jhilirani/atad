@@ -7,19 +7,20 @@
                 <h4 class="heading">Recent Works</h4>
                 <div id="grid-container" class="cbp-l-grid-projects">
                     <ul>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1";
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
                         foreach($rsAllVideos AS $k):?>
                         <li class="cbp-item graphic">
                             <div class="cbp-caption">
                                 <div class="cbp-caption-defaultWrap">
-                                    <iframe width="270" height=225" src="https://www.youtube.com/embed/qJ3t2BgBQtc" frameborder="0" allowfullscreen></iframe>
+                                    <?php $urlArr=  explode('watch?v=', $k->Url);?>
+                                    <iframe width="270" height=225" src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <?php /*--<a href="<?php echo SiteResourcesURL;?>photo_gallery/<?php echo $k->Image;?>" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="<?php echo $k->CategoryName;?>">view larger</a>*/?>
+                                            <iframe src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
                                         </div>
                                     </div>
                                 </div>

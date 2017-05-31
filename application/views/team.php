@@ -17,7 +17,7 @@ html,body {
      vertical-align: baseline;
   }
 
-img {
+img.team-photo {
   vertical-align: middle;
   max-height: 360px;
   width: 100%;
@@ -130,7 +130,7 @@ h1,h2,h3,h4,h5 {
             foreach ($rsTeam As $k):?>
             <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
                 <div class="team-wrapper">
-                    <img src="<?php echo SiteResourcesURL;?>team/400X400/<?php echo $k->Image;?>"  class="img-responsive" alt="team img" >
+                    <img src="<?php echo SiteResourcesURL;?>team/400X400/<?php echo $k->Image;?>"  class="img-responsive team-photo" alt="team img" >
                     <div class="team-des">
                         <h4><?php echo $k->Name;?></h4>
                         <h3><?php echo $k->Desingnation;?></h3>

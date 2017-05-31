@@ -107,7 +107,7 @@ if(!empty($rsNew)):?>
                         //echo $sql;
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
-                        foreach($rsAllVideos AS $k):?>
+                        foreach($rsAllVideos AS $k)://pre($k);?>
                         <li class="cbp-item web-design">
                             <div class="cbp-caption">
                                 <div class="cbp-caption-defaultWrap">
@@ -117,7 +117,7 @@ if(!empty($rsNew)):?>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <iframe width="270" height=225" src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
+                                            <iframe src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@ if(!empty($rsNew)):?>
                             <!--<div class="cbp-l-grid-projects-desc">Web Design / Graphic11</div>-->
                         </li>
                         <?php endforeach;?>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `photo_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `photo_gallery` AS v JOIN category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
                         foreach($rsAllVideos AS $k):?>
