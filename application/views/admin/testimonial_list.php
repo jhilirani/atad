@@ -91,12 +91,12 @@ function AskDelete(id)
 	<table width="100%" border="0" align="center" cellpadding="1" cellspacing="1" id="ListBox" style="border:#FBE554 1px solid;">
   <tr class="ListHeadingLable" bgcolor="#FBE554" height="25px;">
     <td width="5%">Sl No </td>
-    <td width="20%">First Name </td>
-    <td width="20%">Last Name </td>
-    <td width="30%">Testimonial </td>
-    <td width="30%">Profile </td>
-    <td width="15%">Date </td>
-    <td width="10%">Action</td>
+    <td width="15%">First Name </td>
+    <td width="15%">Last Name </td>
+    <td width="35%">Testimonial </td>
+    <td width="15%">Profile </td>
+    <td width="10%">Date </td>
+    <td width="15%">Action</td>
   </tr>
   <script language="javascript">
   var DataArr=new Array(<?=count($DataArr)?>);

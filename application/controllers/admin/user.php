@@ -129,7 +129,7 @@ class User extends MY_Controller{
             $this->User_model->contact_delete($id);
 		
             $this->session->set_flashdata('Message','Contact deleted successfully.');
-            redirect(base_url().'admin/user/demo_list');
+            redirect(base_url().'admin/user/contact_list');
         }
         
         public function demo_list(){

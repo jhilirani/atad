@@ -103,7 +103,7 @@ if(!empty($rsNew)):?>
                 <!-- // all web design are videos and all identity are photos-->
                 <div id="grid-container" class="cbp-l-grid-projects">
                     <ul>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN Category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
+                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
                         //echo $sql;
                         $rsAllVideos=$this->db->query($sql)->result();
                         //pre($rsAllVideos);die;
@@ -111,14 +111,13 @@ if(!empty($rsNew)):?>
                         <li class="cbp-item web-design">
                             <div class="cbp-caption">
                                 <div class="cbp-caption-defaultWrap">
-                                    <!--<img src="<?php echo SiteResourcesURL;?>img/works/1.jpg" alt="" /> -->
-                                    <iframe width="270" height=225" src="https://www.youtube.com/embed/qJ3t2BgBQtc" frameborder="0" allowfullscreen></iframe>
+                                    <?php $urlArr=  explode('watch?v=', $k->Url);?>
+                                    <iframe width="270" height=225" src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <!--<a href="<?php //echo SiteResourcesURL;?>img/works/1big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Dashboard<br>by Paul Flavius Nechita">view larger111</a> -->
-                                            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/qJ3t2BgBQtc" frameborder="0" allowfullscreen></iframe>-->
+                                            <iframe width="270" height=225" src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
                                         </div>
                                     </div>
                                 </div>
