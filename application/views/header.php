@@ -24,15 +24,15 @@
                                 <div style="font-size: 11px;color:#000;font-weight: bold;">CTO & Advisory ATAD</div>
                             </div>
                             <div class="col-md-4 text-center">
-                                <img src="<?php echo SiteResourcesURL?>img/avatar.png" alt="" width="70" height="70">
+                                <img src="<?php echo SiteResourcesURL?>images/atad_precident_img.jpg" alt="" width="70" height="70">
                                 <div style="font-size: 11px;color:#000;font-weight: bold;">President ATAD</div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div id="sb-search" class="sb-search">
-                                <form>
+                                <form name="header_search" id="header_search" action="javascript:void(0);">
                                     <input class="sb-search-input" placeholder="Enter your i-card number" type="text" value="" name="search" id="search">
-                                    <input class="sb-search-submit" type="submit" value="">
+                                    <input class="sb-search-submit" type="button" value="" />
                                     <span class="sb-icon-search" title="Click to start searching"></span>
                                 </form>
                             </div>
@@ -87,3 +87,4 @@
             </div>
         </header>
         <!-- end header -->
+        

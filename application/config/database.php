@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = ''; //secret
-$db['default']['database'] = 'atad';
+$db['default']['username'] = 'amateurt_cto';
+$db['default']['password'] = '*amateurt_atad#123*'; //secret
+$db['default']['database'] = 'amateurt_atad';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

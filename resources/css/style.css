@@ -673,8 +673,8 @@ section.callaction {
 /* ---- parallax ---- */
 
 .parallax {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 420px;
+    /*padding-bottom: 110px;*/
 	display:block;
     position:relative;
     z-index:120;

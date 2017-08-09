@@ -91,70 +91,9 @@ if(!empty($rsNew)):?>
     </div>
     <!-- end divider -->
     <!-- Portfolio Projects -->
-    <div class="container marginbot50">
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="heading">Our Activity in Visual</h4>
-                <div id="filters-container" class="cbp-l-filters-button">
-                    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All<div class="cbp-filter-counter"></div></div>
-                    <div data-filter=".identity" class="cbp-filter-item" data-type="photo">Photo<div class="cbp-filter-counter"></div></div>
-                    <div data-filter=".web-design" class="cbp-filter-item" data-type="video">Video<div class="cbp-filter-counter"></div></div>
-                </div>
-                <!-- // all web design are videos and all identity are photos-->
-                <div id="grid-container" class="cbp-l-grid-projects">
-                    <ul>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `video_gallery` AS v JOIN category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
-                        //echo $sql;
-                        $rsAllVideos=$this->db->query($sql)->result();
-                        //pre($rsAllVideos);die;
-                        foreach($rsAllVideos AS $k)://pre($k);?>
-                        <li class="cbp-item web-design">
-                            <div class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <?php $urlArr=  explode('watch?v=', $k->Url);?>
-                                    <iframe width="270" height=225" src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <iframe src="https://www.youtube.com/embed/<?php echo $urlArr[1];?>" frameborder="0" allowfullscreen data-title="<?php $k->CategoryName;?>"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-l-grid-projects-title"><?php echo $k->CategoryName;?></div>
-                            <!--<div class="cbp-l-grid-projects-desc">Web Design / Graphic11</div>-->
-                        </li>
-                        <?php endforeach;?>
-                        <?php $sql="SELECT v.*,c.CategoryName FROM `photo_gallery` AS v JOIN category AS c ON(v.CategoryID=c.CategoryID) WHERE v.Status=1 LIMIT 0,8";
-                        $rsAllVideos=$this->db->query($sql)->result();
-                        //pre($rsAllVideos);die;
-                        foreach($rsAllVideos AS $k):?>
-                        <li class="cbp-item identity">
-                            <div class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="<?php echo SiteResourcesURL;?>photo_gallery/250X350/<?php echo $k->Image;?>" alt="" class="img-responsive" />
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <a href="<?php echo SiteResourcesURL;?>photo_gallery/<?php echo $k->Image;?>" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="<?php echo $k->CategoryName;?>">view larger</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cbp-l-grid-projects-title"><?php echo $k->CategoryName;?></div>
-                            <!--<div class="cbp-l-grid-projects-desc">Web Design / Identity</div>-->
-                        </li>
-                        <?php endforeach;?>
-                    </ul>
-                </div>
-                <div class="cbp-l-loadMore-button">
-                    <a href="<?php echo BASE_URL;?>video" class="cbp-l-loadMore-button-link">LOAD MORE VIDEOS</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
+    
     <!-- divider -->
     <div class="container">
         <div class="row">
@@ -196,7 +135,7 @@ if(!empty($rsNew)):?>
     </div> --->
     
     <!-- parallax  -->
-    <div id="parallax1" class="parallax text-light text-center marginbot50" data-stellar-background-ratio="0.5">	
+    <div id="parallax1" class="parallax text-light text-center">	
         <div class="container">
             <div class="row appear stats">
                 <div class="col-xs-6 col-sm-3 col-md-3">&nbsp;</div>

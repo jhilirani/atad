@@ -95,6 +95,48 @@
 <script src="<?php echo $SiteJSURL;?>google-code-prettify/prettify.js"></script>
 <script src="<?php echo $SiteJSURL;?>animate.js"></script>
 <script src="<?php echo $SiteJSURL;?>custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 <script type="text/javascript" language="javascript" src="<?php echo $SiteJSURL;?>jzaefferer-jquery-form-validatation.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+            $(document).ready(function(){ 
+                $('.sb-search-submit').on('click',function(){ //alert('bb');
+                    var data=$('#search').val();
+                    //alert("=="+$.trim(data)+'==');
+                    if($.trim(data)==""){
+                        bootbox.alert("Please enter 'Student Name' or 'Student Id card No' or 'Belt Type'");
+                        return false;
+                    }
+                    
+                    var dialog = bootbox.dialog({
+                        size: 'large',
+                        message: '<p class="text-center">Please wait while , i am collecting student data</p><br /><br /><img src="<?php echo SiteImagesURL;?>3.gif" alt="loading">',
+                        closeButton: false
+                    });
+                    setTimeout(function(){
+                        var ajaxSearchURL='<?php echo BASE_URL.'user/search_student/';?>';
+                        $.ajax({
+                            url:ajaxSearchURL,
+                            type:'POST',
+                            data:'search='+$.trim(data),
+                            success:function(msg){
+                                dialog.modal("hide");
+                                if(msg==""){
+                                    bootbox.alert("There is not record with us as per your search criteria,Plz chck once again the criteria");
+                                    return false;
+                                }else{
+                                    var successDialog = bootbox.dialog({
+                                        size: 'large',
+                                        message: msg,
+                                        closeButton:true
+                                    });
+                                }
+
+                            }
+                        });
+                    },3000);
+                    
+                });
+            });
+        </script>

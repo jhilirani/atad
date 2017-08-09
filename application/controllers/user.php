@@ -152,4 +152,26 @@ class User extends MY_Controller{
                 redirect(base_url().'index/contact_us');
             }
         }
+        
+    function search_student(){
+        $searchData=  $this->input->post("search");
+        if($searchData==""){
+            echo '';die;
+        }else{
+            // search for name;
+            $data=array();
+            $sql="SELECT * FROM (`student`) WHERE `card` = '$searchData' OR `belt` = '$searchData' OR `name` LIKE '%$searchData%'";
+            //$this->db->where('card',$searchData)->or_where('belt',  strtolower($searchData))->or_like('name',$searchData);
+            $rs=  $this->db->query($sql)->result();
+            //echo $this->db->last_query();die;
+            if(count($rs)==0){
+                echo '';die;
+            }else{
+                $data['rs']=$rs;
+                $data['searchData']=$searchData;
+                //pre($data);die;
+                $this->load->view('student_search',$data);
+            }
+        }
+    }    
 }
