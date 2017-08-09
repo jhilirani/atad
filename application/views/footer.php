@@ -6,8 +6,8 @@
 					<h4>Get in touch with us</h4>
 					<address>
 					<strong>ATAD</strong><br>
-					 Sailor suite room V124, DB 91<br>
-					 Someplace 71745 Earth </address>
+					 At/POST: Dhenknal,Near Bustand,<br>
+                                        LEKHAKA SANSHAD,Oriss,India<br>PIN - 759001</address>
 					<p>
 						<i class="icon-phone"></i><?php $rsHeaderPhone=$this->db->get_where('system_constants',array('ConstantName'=>'ContactNo'))->result();
                                     echo $rsHeaderPhone[0]->ConstantValue;?><br>

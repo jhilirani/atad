@@ -12,9 +12,9 @@
                     <th>Age</th>
                     <th>Belt</th>
                     <th>Belt Promotion Year</th>
-                    <th>Father Name</th>
+                    <!--<th>Father Name</th>
                     <th>Class Name</th>
-                    <th>Photo</th>
+                    <th>Photo</th>-->
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
                     <td><?php echo  $v->age?></td>
                     <td><?php echo $v->belt?></td>
                     <td><?php echo $v->belt_year?></td>
-                    <td><?php echo $v->father?></td>
+                    <?php /*<td><?php echo $v->father?></td>
                     <td><?php echo $v->class?></td>
                     <td>
                         <?php if(file_exists(ResourcesPath.'student/'.$v->photo)){?>
@@ -33,7 +33,7 @@
                         <?php }else{?>
                         <img src="<?php echo SiteResourcesURL.'student/demo.png'?>" width="70px" alt="<?php echo $v->name?>" title="<?php echo $v->name?>">
                         <?php }?>
-                    </td>
+                    </td>*/?>
                 </tr>
                 <?php $i++;endforeach; ?>
             </tbody>
